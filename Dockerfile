@@ -1,7 +1,7 @@
 FROM nginx:1.25.2-alpine
 
 # Remove default welcome page
-RUN rm /usr/share/nginx/html/index.html
+#RUN rm /usr/share/nginx/html/index.html
 #RUN echo"Welcome to the OpenShift Page" >> /usr/share/nginx/html/index.html
 
 # 1. support running as arbitrary user which belogs to the root group
