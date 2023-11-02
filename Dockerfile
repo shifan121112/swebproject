@@ -8,10 +8,10 @@ RUN rm /usr/share/nginx/html/index.html
 # 3. comment user directive as master process is run as user in OpenShift anyhow
 RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx && \
     chgrp -R root /var/cache/nginx && \
-    sed -i.bak 's/listen\(.*\)80;/listen 8081;/' /etc/nginx/conf.d/default.conf && \
+    sed -i.bak 's/listen\(.*\)80;/listen 8080;/' /etc/nginx/conf.d/default.conf && \
     sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf && \
     addgroup nginx root
 
-EXPOSE 8081
+EXPOSE 8080
 
 USER nginx
